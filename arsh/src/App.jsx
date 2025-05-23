@@ -1,27 +1,29 @@
 
-
-import { useState } from "react"
-import TodoList from "./component/TodoList"
+import Register from './pages/Register';
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/login";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
-  const [count,setCount]=useState(0)
-
-  const MYName = "arshath"
-  const age = "22"  
- 
-
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <button onClick={()=> setCount(count+1)}>count {count}</button>
-  <TodoList>
-    
-  </TodoList>
-  </>
-   
+      {/* < Dashboard />
+    <login />
+    <Register />  */}
+      {/* <h1 className="text-3xl font-bold underline">
+    hello world!
+    </h1>*/}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/*" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="p" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
-}
 
+}
 export default App

@@ -1,9 +1,10 @@
  import React from 'react'
  
- const TodoList = () => {
+ const TodoList = ({item , index}) => {
    return (
-     <div>TodoList</div>
-   )
- }
+     <li className="p-2 m-0,5 bg-blue-300" key={index} > {item}</li>
+       )
+      }
+ 
  
  export default TodoList
